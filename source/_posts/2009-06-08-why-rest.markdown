@@ -1,0 +1,270 @@
+---
+date: '2009-06-08 15:44:46'
+layout: post
+slug: why-rest
+status: publish
+title: Why REST ?
+wordpress_id: '648'
+categories:
+- architecture
+- java
+- programming
+- rest
+- rest-musings
+- software
+- web
+tags:
+- rest
+---
+
+## Introduction
+
+
+It is becoming apparent that even as it becomes popular, REST (Representational State Transfer) is not yet as well understood. This might seem a surprising statement, but a lot of us use REST thanks to many frameworks supporting REST like interfaces, have a sense of what REST like interfaces are like (even if such an understanding is not sufficiently accurate), and exercise our common sense in using such interfaces. Having said that, let me clarify that while the internet is full of documentation about the semantics of REST, its actually quite light on the rationale for REST (including [Roy Fielding's dissertation](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm) which is _the reference document_ for REST). Thus I have had to intersperse REST semantics and historical narrative with some personal opinions. So treat this as a part opinion and feel free to question my thought where you think it does not make sense.
+
+**Audience**
+
+If you are a REST expert, you are likely to have figured out much of this any ways by now. If you would like to understand specific technical semantics about REST, again this may not be the best article to read. However if you are curious about REST and would like to read a perspective on why and how it makes sense read on.
+
+**Flow**
+
+I shall be meandering through a historical narrative in the first half before starting to make the points I wish to make in the second. Lot of the points I make in the first half are likely to be those you already are aware of. However these are being made to allow an immediate recall when you read the second half. It is quite important to have read the first half to understand the perspective I put together in the second.
+
+
+## Historical Narrative
+
+
+**FTP**
+
+I am sure you have used [FTP (File Transfer Protocol)](http://en.wikipedia.org/wiki/File_Transfer_Protocol) a few times even though nowhere as frequently as HTTP (HyperText Transfer Protocol). Let me quickly present some characteristics of FTP
+
+
+
+	
+  * Given a FTP client, you can connect to any FTP server so long as you have a valid userid/password pair for the server (or anonymously if the server so supports).
+
+	
+  * The home directory on connecting to a FTP server is typically your starting point. At this point typically you can execute the _'ls'_ or _'List Directory'_ command to list all the files and directories within the home directory.
+
+	
+  * If a file interests you, you can get it by issuing a get command
+
+	
+  * If a subdirectory interests you, you can further navigate into that directory by issuing a _'cd'_or _'Change Directory'_ (or often by double clicking on the directory in case of a graphical client).
+
+	
+  * If you would like to add a file to the current directory you can issue a _'put'_ or _'Upload'_ command.
+
+	
+  * While you have the flexibility to navigate from one directory to another, you soon realise that every file and directory is uniquely addressable by its fully qualified path (either absolute or relative) and you can refer to each file and directory by its path. You are also aware that a valid path will uniquely resolve to only one directory or file.
+
+	
+  * At each stage as you navigate into a separate directory, the server allows you to retrieve the list of subdirectories and files within your current directory. It always shows you the current state of that directory. Thus even if you were to list the same directory twice, and someone else uploaded a new file or created a new subdirectory successfully between the two requests, you will see the reference to the new file / directory when you request for the listing the second time.
+
+	
+  * At every stage you issue a command, the FTP client+server work together to service the request (or issue the appropriate error message as necessary), and then pretty much forget about what you did. In other word the server keeps no track of and shows no awareness of what you have done earlier in your session (though it does remember who you are primarily from a security perspective.
+
+	
+  * To work with a FTP server using a command line client, you primarily need to understand the usage of four commands (verbs) post a successful connection. These are _'ls'_ to list the contents of a directory, _'cd'_ to navigate to a different directory, _'get'_ to download a file, and _'put'_ to upload a file.
+
+
+So FTP allows us to upload and download files. But does it allow us to _'do things'_ ? Sure, so long as you combine it with a few more pieces in the puzzle. Let us say, we are back in the late 80s (prior to the invention of HTTP) and I want to send and a list of purchase orders collected by a local office to a central office for further processing. This requires the following elements to be added to the mix.
+
+
+
+	
+  * A shared understanding of where the files will be uploaded, how they will be uniquely named, their specific file extensions (optionally) and the specific format of the file eg. Comma Separated or Lotus 1-2-3 or WordStar or WordPerfect (the popular application software of the day) including the positioning of the various fields in the file, and
+
+	
+  * Preferably a daemon process on the central office computer (the FTP server) which regularly scans the directory, parses each file as it comes it, does the relevant processing on it, and generates the appropriate result files and places them in the appropriate directories using the shared understanding of the directory structure and the file naming convention to communicate back the results of the processing.
+
+
+Ho Hum. This was all stuff you knew. But the reason I brought it up is that FTP and how it was leveraged then has a lot to do with the principles that govern REST as we shall later see.
+
+**RPC**
+
+Back then in the 80's FTP wasn't the only mechanism to transfer data between machines. One more of the many other options was [RPC (Remote Procedure Call)](http://en.wikipedia.org/wiki/Remote_procedure_call). It not only allowed you to transfer data across machines, it actually had built into itself, a contract to remotely execute software. Unlike FTP which merely transferred data (in well understood units called files), RPC allowed you to invoke remote procedures by supporting an ability to pass messages which included the message name and the values for all the parameters necessary to be supplied to the message. Unlike FTP which was meant to do data transfer across a network, RPC was geared to _do things remotely_.
+
+**A contrast between FTP and RPC**
+
+If the objective of network computing is to use the computers and networks to 'do things' one would assume that many more people would use RPC than FTP for the same. While RPC did get used as a technical substrate, at a business processing level FTP got used far more (eg. to send and remotely process the list of purchase orders). There are some important reasons that we need to understand here.
+
+FTP required understanding of very few basic verbs (ls, cd, get, put). Thus the training required to understand FTP semantics was far less than that for RPC. This was partially due to the fact that RPC had a programmatic interface. To the best of my knowledge there are no widely used command line clients for human interaction with RPC services. In addition, each procedure required a set of semantic data (parameter) associated with it. This was no different than FTP which also required similar data to be shipped over the network. Turns out there were a few distinctions. First, the nature of design of RPC services often required combining application data with control data, and there was also often a sequential expectation due to the RPC business transaction being broken up into multiple RPC calls perhaps for the sake of efficiency. Moreover each time, new procedures were added or parameters added, these required programmatic changes. FTP on the other hand was simpler. In most cases the entire data (including some redundant data perhaps) was sent in one block (or file in FTP parlance). By dealing with a file as the least common denominator, the FTP stack decoupled itself from any application specific semantics. Moreover, depending upon the agreed upon format, the files could be edited at either end by by human actors using specific software such as plain text editors or word processors or spreadsheets. Moreover if the formats changed, wherever such files were being manually edited, no programmatic changes were required. Irrespective of the changes you made to the file formats, file processing software, the FTP stack itself did not change - it remained stable.
+
+**Less is more**
+
+A theme I shall come back to again is many a times less is more. FTP had far fewer training requirements (few basic verbs). FTP did not deal with parameter value formatting (though other pieces of software subsequently might have to). FTP was just so much easier to start working with. FTP did not actually preclude any of the capabilities of RPC from being introduced, it merely allowed this to be added subsequently as additional optional layers (or subsequent elements in the processing pipeline). Finally FTP allowed users to deal with the data in the units and the formats and the tools they understood the best - their day to day application software components and simply focused on only transferring files, while imposing only one requirement - each end should work with a file as a unit, and both ends should understand the file formats. By focusing on file as a unit, each business user could focus on the data he/she wanted to deal with in the format that was most appropriate (an analogy in REST would be a resource .. but I'm getting ahead of myself). And at the end of the day, by doing less, FTP ended up being much more popular and thus doing more.
+
+**Email**
+
+Other protocols widely used on the net were SMTP / POP which were used for email. Email eventually was considered the killer app for the internet. Similar to FTP email focused on the users getting to learn only a few basic verbs and exchanging the basic unit of data transfer (messages) using these verbs. Again, even though email itself didn't get things done, it contributed far more heavily than RPC to getting things done, by having other manual or software actors at either end of the messages who did the necessary processing required.
+
+**WWW (World Wide Web)**
+
+While email was the killer app for the internet, the one that really brought it to masses was the world wide web which was based on the HTTP protocol. While HTTP could be used to ship documents of a variety of types (often classified by their mime-types), the defacto type of document used the HyperText Markup Language (HTML). Unlike FTP and email, this required the authors to understand a new language, but used a simple markup syntax to keep the learning curve to the minimum. It however introduced a very powerful element - the embedded hyperlink. While the earlier technologies supported a uniform identifier for each document / message, the hyperlink allowed references to other documents / messages to be embedded thus converting the document pool into a document web. We now had the ability to navigate from one document to another and such navigation retained the contextual relevance by embedding the hyperlinks. There were other enhancements as well such as introduction of more verbs (eg. POST and DELETE, the latter not really being supported by any of the browsers). Allow me to state the salient points of WWW despite the obvious duplications with some of the points I listed under FTP (for the sake of emphasis). Note that the scenario I describe below is primarily describing static web serving (except to the extent of file uploads) and does not address the presence of a dynamic web application.
+
+
+
+	
+  * Given a web browser you can connect to any web server optionally using the appropriate authentication credentials.
+
+	
+  * Typically the home page of the web server is your starting point. At this point you are shown the document which usually include embedded hyperlinks to other associated documents on the web server.
+
+	
+  * You can get/view/download/save a document by clicking on a hyperlink pointing to the document.
+
+	
+  * Some web servers may be configured to allow you to browse a directory. Clicking a hyperlink pointing to the directory allows you to see a directory listing which shows all the subdirectories and documents within the current directory. Each such subdirectory or document is also shown as a hyperlink to allow you to navigate to it.
+
+	
+  * Some documents have an form including an embedded file field and a button which allow you to upload a new document onto the web server.
+
+	
+  * Each document (and directory if directory browsing is turned on) has at least one identifier which uniquely identifies the document - the URL. It is feasible to directly navigate to the document if you are aware of the URL.
+
+	
+  * Navigating to a different document often provides you with a different list of embedded hyperlinks which are contextually relevant to the document being viewed.
+
+	
+  * At each stage the web server is not aware of any other information about you apart from your authentication credentials, and is not generally aware of your browsing history (except what may be stored for audit purposes on the web server logs).
+
+	
+  * As a user the primary skills you need to grasp is the ability to enter a starting URL, and then being able to navigate from document to document by clicking on the hyperlinks. If you are uploading documents, you may in addition need to know how to specify a local file path and press the Submit button to upload the file.
+
+	
+  * While HTML documents are the defacto default, the same capabilities can be used to serve any types of documents. The server usually identifies the document types by the registered mime types, and the browser may either render the document itself or call upon the necessary add-on plugin application to render the document based on the appropriate type or may in some cases simply save the document locally in case no such application is available for further processing.
+
+	
+  * Usually but not necessarily the document name have the characteristics of a noun
+
+
+Again the reason I listed these characteristics is that these have a tremendous commonality with those of REST (except that what I refer to as a document above may get referred to as a resource in REST parlance).
+
+**SOA : DCE, Tuxedo, CORBA, RMI**
+
+Even as the web was evolving other technologies which allowed for more sophisticated remote service invocations were being developed. Along with RPC, these were essentially different technical manifestations of Service Oriented Architecture (SOA) principles. While these are substantial developments in their own right, the relevant points to be made in the context of this article are :
+
+
+
+	
+  * Each SOA service supported the ability to define a set of service semantics which included the service name, the parameters to the service, an ability to expose the metadata of such semantics, an ability to leverage such metadata and invoking such services either statically or dynamically from a remote client.
+
+	
+  * Many services were usually expected to "do something" though quite often some services would simply return the requested data. Usually but not necessarily the services were identified by using 'verbs'.
+
+	
+  * Some of the SOA services allowed maintenance of a client state on the server, and allowed the server to do processing conditional on the client state.
+
+	
+  * These technologies almost invariably required some kind of programmatic effort at both the client and the server end. Manual specification of the service parameters and manual invocation of the service was simply not a typical use case. Neither was a default rendering of the results easily available to be manually viewed by an end user.
+
+	
+  * Unlike retrieving or storing a document, these services often were expected to have a far more complex functionality.
+
+
+**CGI, dynamic web applications and Web Services**
+
+Clearly as WWW started getting used far more, people were only too keen to use it for much more than storing or retrieving documents. This led to the development of CGI and subsequently other dynamic web application technologies (eg. LAMP, J2EE etc.) which would allow us to use the web to 'do something'. Since these were clearly offshoots of the SOA world, being mapped onto the WWW infrastructure, the characteristics of such dynamic applications often had a lot in common with SOA, and they started dropping many characteristics of the traditional static WWW. Thus was born the child of the world wide web and distributed service oriented architectures - web services. This led to newer SOA technologies such as WS-* and SOAP.
+
+Like the typical scenarios after the discovery of any highly profitable opportunity, the early rush was to leverage the opportunity and it was only a little later when the dust died down, that people started wondering if they had sacrificed something in the heat and dust of the moment. That stock taking resulted in the realisation, that some of the very basic characteristics of the extraordinarily successful internet technologies (FTP / SMTP / WWW) had been diluted, and even if such dilution still allowed immediate progress to have occurred, some of them would need to be corrected to be able to continue the explosive growth that had been seen so far. One such exercise in my opinion is the laying down of the REST architecture style.
+
+
+## REST Semantics
+
+
+While REST brings back many of the characteristics that made internet so successful back to application design, it should be noted that many of these are not precluded by Web Services or SOA. However what are mandatory characteristics in REST are in some cases missing from but in most cases quite feasible to implement in traditional (non REST) web services by using additional best practices. Also note that each characteristic is not necessarily universally superior. So do evaluate it in your context to see if it makes sense. However before we get to the benefits of REST, a quick synopsis of REST technical characteristics might be in order.
+
+While a full description of the REST technical aspects is completely beyond the scope of this post, I summarise these below. You might notice the strong parallels between the characteristics of FTP and WWW and those of REST even as REST adds a few more capabilities. The reason I portray them in the form below in a manner quite similar to the way I portrayed the characteristics of FTP and WWW is to emphasise that REST actually continues to leverage the same characteristics that made these technologies so popular and globally scalable, even as it just adds those few minimally necessary capabilities to achieve the same scalability for not just transferring documents or rendering pages but to 'do something'. In other words it brings together the characteristics which made the internet technologies so popular and applies them to the inter application integration, component and service orientation, and application mashup scenarios to allow them to achieve similarly large adoption and to perform the tasks necessary in the given context (or 'do someting' as I have continuously referred to).
+
+**REST characteristics**
+
+
+
+	
+  * **Resource and media types as the basic units :** REST treats a resource as the basic unit of data transfer. Such resources could refer to anything in the particular context eg. a flight reservation, an invoice, a video etc.
+
+	
+  * **Unique resource identifiers :**REST requires that each resource have at least one identifier which uniquely identifies that resource. This makes it easy to be able to bookmark resources or make them searchable.
+
+	
+  * **Each resource has at least one representation :**Each resource can be expressed using a variety of representations. This could include HTML, XML, CSV, JSON etc.
+
+	
+  * **Each resource has often one default manually readable representation :** In most cases but not all, each resource has a representation that can be manually consumed using a web browser. Such manual representations are often either XHTML representation with associated CSS, but could theoretically be some custom representation rendered by a delivered on demand custom javascript or Java applet. Note that this is not a requrement of REST but is a practice often followed.
+
+	
+  * **Each resource has a type. REST supports self describing media types :** Each resource has a type (referred to as media type since REST refers to the resource web itself as hypermedia). The type influences the data semantics of the resource, and the type itself can be self documenting using a variety of technologies (eg. one possible way is to specify XML schema descriptors).
+
+	
+  * **Each resource representation optionally includes contextually relevant hyperlinks to other resources :**This not only allows the clients to auto discover associated resources, but also allows the server to clearly communicate the contextually relevant links based on an application state.
+
+	
+  * **REST resources are indexable and search engine friendly :** A consistent resource naming and representation allows for easy indexation and search engine integration.
+
+	
+  * **REST requires minimal starting point intelligence :** Typically one only needs the initial URL for being able to integrate with a REST implementation. All newer resources are often dynamically discovered. Since these media types also document their own metadata, client agents can automatically discover more information about them. Thus media type metadata rather than being compiled into the REST client can be dealt with dynamically or by using code on demand agents for dealing with the appropriate media type (similar to browser plugins)
+
+	
+  * **REST encourages a uniform interface. :**Typically this manifests itself by the minimal verbs being used to describe REST operations.When used with HTTP these are GET, PUT, POST and DELETE. This reduces the intelligence requirements on the client. Additionally clients may be capable of parsing metadata for the resources based on standard formats such as ATOM or XML schemas. The context specific intelligence required on the part of the client is no longer in the verbs it has to understand (method names) but is now in the resource types that it may need to manipulate. Thus if a client can deal with resource identification, resource representation, self descriptive messages and hypermedia, it can start dealing with REST.
+
+	
+  * **REST supports value addition by intermediate processors :** REST supports the scenarios where intermediate processor units can provide additional value addition. These could include processors which provide caching support or those that provide resource enrichment capabilities.
+
+	
+  * **REST encourages usage of scalable practices :**By precluding usage of conversational state and sequential assumptions, REST implementations tend to be easier to scale even as they compromise on efficiency at times (due to redundant data transfer or additional processing requirements)
+
+
+
+
+## REST benefits
+
+
+Having described many of the REST characteristics the following could be interpreted as the benefits of adopting a REST style architecture.
+
+
+
+	
+  * **Default Rendering**In case of most REST implementations, you can quickly provide a default HTML rendering capability. Thus even as you provide a REST interface to allow inter application integration, customers of such an interface do not have to wait for building the programmatic capabilities for leveraging it, they can get started immediately by being able to manually view all the resources and their states manually and by navigating around the interface by using a plain web browser. This substantially reduces the entry barriers for your customers, and allows them to get more conversant with your media types even as they are still figuring out how to programatically leverage the capabilities.
+
+	
+  * **Self describing / auto discovery of media types and capabilities**The traditional web service semantics rely upon clear upfront documentation of media types, their schema and the API semantics. Thus the metadata about the service is often communicated 'out of band' from the actual service itself. This is required so that the clients can understand all the valid end points and service semantics up front before they can leverage the services. Not so with REST. Given an initial starting point, REST greatly encourages a contextual provision of the relevant additional interfaces (hyperlinks) as a part of the the document / resource data itself. Thus clients do not upfront need to be aware of all the end points (resource URIs) to be able to leverage the services. Moreover REST supports self describing media types as well. Thus the schema information for the resources can be shipped 'in band' with the resource representation itself. This allows for clients to discover new media types or changes to their schema and even allows the default rendering of the same without having to upgrade the programmatic components to leverage the newly discovered or modified media types / schemas. Finally the code on demand capabilities (these are optional) of REST can allow code to be downloaded to automatically parse or render such newly discovered or modified media types.
+
+	
+  * **Encourages scalability even at the cost of efficiency**Aspects such as non maintenance of conversational state, greatly increase the scalability of REST applications even if they do incur a minor cost in efficiency (which can be due to repeated redundant communication of data elements, or additional processing requirements due to preclusion of conversation state). This makes it relatively easier to set up multiple servers as the demand for the REST capabilities increases. Having said that, let me quickly add a caveat that designing clustered applications even if with REST interfaces is not always trivial, and while REST makes it "easier to scale" that should not be confused with "easy to scale".
+
+	
+  * **Resource / Data semantics are much easier to understand than Service semantics**To put it differently an invoice structure is much easier to understand from a data perspective than an invoice processor API. This makes it easy for the clients. This often also makes it easier for the server side implementations. Service semantics often bring in issues of sequence, client state and other control information, most of which can be avoided using REST. Generally speaking expectations are simpler to lay down and meet when specifying resources rather than services.
+
+	
+  * **Clear naming and accessibility of each resource in your universe**Web services don't mandate clear unique identifier for all your resources. Thus sometimes it is not possible to reach a particular resource except through a convoluted series of steps. In some cases some resources are inaccessible for ever. As an example, many online shopping experiences end with an invoice being shown, but I have often found it impossible to later on pull up that invoice that was earlier shown to me at the end of a transaction.
+
+	
+  * **Extensible resource types which are optionally dealt with by clients**Not only are resource types self describing, REST makes it easier to convey additional extensions to such resource types by using additional URIs within the resource representation as well. Thus even as a representation lays down a variety of field values (say for an invoice), there might be other associated resources which might either be optional or variable media types based on the context (eg. purchase order / quality report etc.) which can be easily referenced by simply including their URIs. Such additional information does not require the basic media type to be enhanced or by introducing attachments to the media types. These can be implemented as additional navigable out of band media types. Thus clients don't have to deal with them, but they can do so easily when they choose to do so. Thus the client has a choice to not deal with the additional media types when they do not make sense in the client's context.
+
+	
+  * **Search engine friendliness**While resource directories help for smaller scale integration (eg. Yahoo when it started off, attempted to categorise the web), such directories or registries are often found to be tough to scale beyond a particular threshold (thats why Yahoo or Google now provide entry points by allowing us to search through all the web resources). Consistent resource naming and representation make REST resources search engine friendly and allow additional entry points into a REST service based on search criteria. This makes location of newer resources far easier than what might be feasible through a resource registry especially on a large scale.
+
+	
+  * **Easer layering**While it is possible to add intermediate proxy services for enriching the capabilities of a REST implementation, it just makes it seem a lot easier to implement these as and when required when the underlying architecture is REST based. Thus while mashups can be readily implemented using both REST and traditional SOA implementations, I would submit that these are much easier to implement on REST based architectures.
+
+
+I have used the word scalability above in the context of the ability to service the runtime demands of a larger number of clients. However REST helps makes your software artifacts become scalable in one more way. By providing a basic and minimal uniform interface requirements, REST allows your applications / services / components a low entry barrier path into being a participant in a broad web of similar others who all agree on the basic REST semantics. This substantially increases the potential number of clients to your services since they can leverage these services easily and with low entry barriers. While traditional SOA technologies attempt to provide the universal access to all possible consumers, REST with its emphasis on minimalism, simplicity and low entry barriers actually makes it practical. Similarly REST makes it easy for you to start consuming other services and mashing them up with others to service your clients (pun intended) quickly. Finally REST takes the the very characteristics that made document and message sharing so easy to use and popular (characteristics which are not necessarily found in all conventional SOA implementations) and combines them with the necessary elements to achieve transaction processing, application integration and mashups (use the web to 'do something') on a truly global scale even as it makes these capabilities easily available and cost effective to leverage.
+
+
+## Some concluding comments
+
+
+While not directly relevant as REST rationale or REST benefits, I thought it might be useful to add a few more associated comments within the context of REST usage and adoption.
+
+**Simplicity and bottom up adoption**
+
+I must confess, my biases show up quite strongly in this paragraph (so feel free to treat this as a partially prejudiced statement). Simplicity is not per se a characteristic of REST. However it does stem from the nature of genesis of the competing options. While most internet technologies using an incremental, evolutionary approach, most SOA technologies have been designed by a committee. This is why the consulting and development budgets required to implement FTP / email / Web especially on a per utility basis are far different than those likely for implementing DCE, Tuxedo, CORBA and SOAP. Part of the reason is also due to the fact that most internet technology adoption is bottom up, while that of SOA often is top down. While top down may seem attractive, it may seem sobering to realise that most top down processes break down beyond a particular scale. Thats why free markets on the whole have trounced centrally planned economies (though some recent happenings do point to limitations of the same as well). Thats why internet scale simple inter application API integration and mashups took off even as intranet scale application integration was mired in budgeting, territorial, enterprise modeling and governance issues. Thats why the LAMP stack (eg. PHP) which hasn't been particularly strong in the non web arena, is deeply entrenched in the web based application space. Sometimes it just is more productive to quickly implement a simpler technology and incrementally enhance it rather than attempting to cover all possibilities, options, and border conditions by putting a committee in place. At its very core, REST requires only incremental understanding of newer technologies, is easier to incrementally adopt and is less likely to get mired in organisational issues. Precisely the characteristics that FTP, EMail and WWW had.
+
+**Simpler abstractions win**
+
+I have generally found that simpler abstractions even though harder to deal with initially, often win in the long run. Notice the fact that the bare bones rendering functionality of HTML/WWW completely trounced the rich UI and application integration capabilities then available (eg. Windows/Java and DCOM/CORBA/RMI). This is not to suggest that the extra capabilities are not required. That is why Rich User Interfaces on WWW continue to be a dominant part of the internet technology wishlist. However the simpler, cleaner and minimalistic abstractions often are far more important than feature richness. A point I would want to make in favour of REST even as I admit that conventional SOA technologies are far more feature rich than REST.
+
+**REST is not SOA**
+
+I must confess, for a long time I believed REST was merely a specific usecase of SOA. However recent thoughts lead me to believe otherwise. There is indeed a reason for such potential confusion. REST based architectures and SOA may often attempt to service similar goals. To the extent of servicing such goals, REST may look like a substitutable component for other SOA technologies such as SOAP. However even as they attempt to meet similar goals, REST attempts to view at your architecture artifacts differently. REST encourages you to view and model your architecture as a set of resources rather than services. There are important implications of this not just in terms of the many benefits I describe above available under REST but also in terms of the design and architecture characteristics of the implementation. Treating REST as just another way to implement SOA sometimes encourages one to miss out on the subtleties. These however are beyond the scope of this post, and I intend to cover the same apart from the implications of REST on software design in my next post.

@@ -1,0 +1,12 @@
+.bundle
+.DS_Store
+.sass-cache
+.gist-cache
+.pygments-cache
+.rbenv-version
+.rvmrc
+.slugignore
+_deploy
+public
+CHANGELOG.markdown
+README.markdown
