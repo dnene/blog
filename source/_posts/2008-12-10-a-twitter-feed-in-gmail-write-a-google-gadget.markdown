@@ -4,6 +4,7 @@ layout: post
 slug: a-twitter-feed-in-gmail-write-a-google-gadget
 status: publish
 title: 'A twitter feed in gmail : Write a google gadget'
+comments: true
 wordpress_id: '237'
 categories:
 - programming

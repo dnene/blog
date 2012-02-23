@@ -4,6 +4,7 @@ layout: post
 slug: my-ideal-programming-language
 status: publish
 title: Programming Languages should be Simple (or My ideal programming language)
+comments: true
 wordpress_id: '1022'
 categories:
 - java

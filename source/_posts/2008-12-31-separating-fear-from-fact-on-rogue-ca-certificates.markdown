@@ -4,6 +4,7 @@ layout: post
 slug: separating-fear-from-fact-on-rogue-ca-certificates
 status: publish
 title: Separating fear from fact - On rogue CA certificates
+comments: true
 wordpress_id: '324'
 categories:
 - security

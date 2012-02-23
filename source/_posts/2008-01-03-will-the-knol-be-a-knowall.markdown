@@ -4,6 +4,7 @@ layout: post
 slug: will-the-knol-be-a-knowall
 status: publish
 title: Will the knol be a knowall ?
+comments: true
 wordpress_id: '7'
 categories:
 - software

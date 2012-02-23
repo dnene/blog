@@ -4,6 +4,7 @@ layout: post
 slug: so-were-jeff-joel-uncle-bob-discussing-happiness-and-fitness
 status: publish
 title: So were Jeff / Joel / Uncle Bob discussing happiness and fitness ?
+comments: true
 wordpress_id: '458'
 categories:
 - programming

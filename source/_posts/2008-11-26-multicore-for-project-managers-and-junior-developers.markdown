@@ -4,6 +4,7 @@ layout: post
 slug: multicore-for-project-managers-and-junior-developers
 status: publish
 title: Multicore for Project Managers and Junior Developers
+comments: true
 wordpress_id: '209'
 categories:
 - architecture

@@ -4,6 +4,7 @@ layout: post
 slug: performance-comparison-c-java-python-ruby-jython-jruby-groovy
 status: publish
 title: Performance Comparison - C++ / Java / Python / Ruby/ Jython / JRuby / Groovy
+comments: true
 wordpress_id: '37'
 categories:
 - java

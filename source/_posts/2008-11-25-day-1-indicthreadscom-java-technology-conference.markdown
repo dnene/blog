@@ -4,6 +4,7 @@ layout: post
 slug: day-1-indicthreadscom-java-technology-conference
 status: publish
 title: 'Day 1 : IndicThreads.com Java Technology conference'
+comments: true
 wordpress_id: '198'
 categories:
 - java

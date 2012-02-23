@@ -4,6 +4,7 @@ layout: post
 slug: scala-needs-terraces
 status: publish
 title: Scala needs terraces
+comments: true
 wordpress_id: '1209'
 categories:
 - functional programming

@@ -4,6 +4,7 @@ layout: post
 slug: nosql-a-fluid-architecture-in-transition
 status: publish
 title: NoSQL - A fluid architecture in transition
+comments: true
 wordpress_id: '867'
 categories:
 - architecture

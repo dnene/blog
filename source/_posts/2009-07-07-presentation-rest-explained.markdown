@@ -4,6 +4,7 @@ layout: post
 slug: presentation-rest-explained
 status: publish
 title: 'Presentation : ReST explained'
+comments: true
 wordpress_id: '771'
 categories:
 - rest

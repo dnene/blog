@@ -4,6 +4,7 @@ layout: post
 slug: will-rails-go-the-struts-1-way
 status: publish
 title: Will Rails go the Struts 1 way ?
+comments: true
 wordpress_id: '312'
 categories:
 - architecture

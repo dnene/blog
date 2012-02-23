@@ -4,6 +4,7 @@ layout: post
 slug: beware-of-polyglot-programming
 status: publish
 title: Beware of polyglot programming
+comments: true
 wordpress_id: '31'
 categories:
 - java

@@ -4,6 +4,7 @@ layout: post
 slug: should-sun-focus-more-on-java-ruby-or-java-groovy-integration
 status: publish
 title: Should Sun focus more on Java-Ruby or Java-Groovy integration
+comments: true
 wordpress_id: '11'
 categories:
 - java

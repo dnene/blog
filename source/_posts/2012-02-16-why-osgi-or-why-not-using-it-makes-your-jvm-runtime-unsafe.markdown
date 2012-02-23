@@ -4,6 +4,7 @@ layout: post
 slug: why-osgi-or-why-not-using-it-makes-your-jvm-runtime-unsafe
 status: publish
 title: Why OSGi? Or why not using it makes your JVM runtime unsafe.
+comments: true
 wordpress_id: '1221'
 categories:
 - programming

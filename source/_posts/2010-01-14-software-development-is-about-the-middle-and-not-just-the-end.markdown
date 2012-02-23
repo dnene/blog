@@ -4,6 +4,7 @@ layout: post
 slug: software-development-is-about-the-middle-and-not-just-the-end
 status: publish
 title: Software development is about the middle and not just the end
+comments: true
 wordpress_id: '950'
 categories:
 - management

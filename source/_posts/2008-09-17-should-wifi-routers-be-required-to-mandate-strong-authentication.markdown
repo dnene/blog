@@ -4,6 +4,7 @@ layout: post
 slug: should-wifi-routers-be-required-to-mandate-strong-authentication
 status: publish
 title: Should Wifi routers be required to mandate strong authentication
+comments: true
 wordpress_id: '64'
 categories:
 - hardware and networking

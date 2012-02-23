@@ -4,6 +4,7 @@ layout: post
 slug: twitter-http-rest-api-invocation-infrastruture-using-data-pipelines
 status: publish
 title: Twitter / HTTP / REST API Invocation Infrastruture using data pipelines
+comments: true
 wordpress_id: '558'
 categories:
 - Internet and Social Media

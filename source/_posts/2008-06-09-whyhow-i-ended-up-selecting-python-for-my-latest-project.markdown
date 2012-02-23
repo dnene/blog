@@ -4,6 +4,7 @@ layout: post
 slug: whyhow-i-ended-up-selecting-python-for-my-latest-project
 status: publish
 title: How I ended up selecting Python for my latest project
+comments: true
 wordpress_id: '29'
 categories:
 - java

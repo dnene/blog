@@ -4,6 +4,7 @@ layout: post
 slug: stack-overflow-is-spirit-underflow-a-plea-to-not-deprioritise-content-and-spirit
 status: publish
 title: StackOverflow is SpiritUnderflow - A plea to not deprioritise content and spirit
+comments: true
 wordpress_id: '90'
 categories:
 - blogging

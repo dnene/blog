@@ -4,6 +4,7 @@ layout: post
 slug: why-merging-development-and-testing-makes-sense-in-tdd-agile
 status: publish
 title: Why merging development and testing makes sense in a TDD / agile environment
+comments: true
 wordpress_id: '45'
 categories:
 - agile

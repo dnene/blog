@@ -4,6 +4,7 @@ layout: post
 slug: service-oriented-rest-architecture-is-an-oxymoron
 status: publish
 title: Service oriented REST architecture is an oxymoron
+comments: true
 wordpress_id: '835'
 categories:
 - architecture

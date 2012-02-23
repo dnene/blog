@@ -4,6 +4,7 @@ layout: post
 slug: an-experienced-programmer-doesnt-use-solid-as-a-checklist-he-internalises-it
 status: publish
 title: 'An experienced programmer doesn''t use SOLID as a checklist - he internalises
+comments: true
   it. '
 wordpress_id: '450'
 categories:

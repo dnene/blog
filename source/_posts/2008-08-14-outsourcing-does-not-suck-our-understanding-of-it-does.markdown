@@ -4,6 +4,7 @@ layout: post
 slug: outsourcing-does-not-suck-our-understanding-of-it-does
 status: publish
 title: Outsourcing does not suck. Our understanding of it does !
+comments: true
 wordpress_id: '46'
 categories:
 - software

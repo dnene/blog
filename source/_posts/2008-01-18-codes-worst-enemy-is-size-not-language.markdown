@@ -4,6 +4,7 @@ layout: post
 slug: codes-worst-enemy-is-size-not-language
 status: publish
 title: Code's worst enemy is size (not language)
+comments: true
 wordpress_id: '10'
 categories:
 - java

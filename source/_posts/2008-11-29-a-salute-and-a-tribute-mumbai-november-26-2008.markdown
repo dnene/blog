@@ -4,6 +4,7 @@ layout: post
 slug: a-salute-and-a-tribute-mumbai-november-26-2008
 status: publish
 title: A salute and a tribute - Mumbai, November 26, 2008
+comments: true
 wordpress_id: '221'
 ---
 

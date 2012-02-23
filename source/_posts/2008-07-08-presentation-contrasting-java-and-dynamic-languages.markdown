@@ -4,6 +4,7 @@ layout: post
 slug: presentation-contrasting-java-and-dynamic-languages
 status: publish
 title: 'Presentation : Contrasting java and dynamic languages.'
+comments: true
 wordpress_id: '38'
 categories:
 - architecture

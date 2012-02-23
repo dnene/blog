@@ -4,6 +4,7 @@ layout: post
 slug: service-oriented-architecture-is-primarily-about-business-and-not-technology.-bollocks
 status: publish
 title: Service Oriented Architecture is primarily about business and not technology.
+comments: true
   Bollocks!
 wordpress_id: '902'
 categories:

@@ -4,6 +4,7 @@ layout: post
 slug: functional-programming-with-python-part-1
 status: publish
 title: Functional Programming with Python - Part 1
+comments: true
 wordpress_id: '970'
 categories:
 - functional programming

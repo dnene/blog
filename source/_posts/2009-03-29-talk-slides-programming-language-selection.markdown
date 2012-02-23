@@ -4,6 +4,7 @@ layout: post
 slug: talk-slides-programming-language-selection
 status: publish
 title: 'Talk Slides : Programming Language Selection'
+comments: true
 wordpress_id: '591'
 categories:
 - java

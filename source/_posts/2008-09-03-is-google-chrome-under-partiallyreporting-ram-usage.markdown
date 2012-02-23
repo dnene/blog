@@ -4,6 +4,7 @@ layout: post
 slug: is-google-chrome-under-partiallyreporting-ram-usage
 status: publish
 title: Is google chrome under / partially reporting RAM usage ?
+comments: true
 wordpress_id: '47'
 categories:
 - software

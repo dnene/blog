@@ -4,6 +4,7 @@ layout: post
 slug: the-cloud-just-got-stronger-even-as-aws-went-down
 status: publish
 title: The cloud just got stronger, even as AWS went down
+comments: true
 wordpress_id: '1082'
 categories:
 - architecture

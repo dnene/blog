@@ -4,6 +4,7 @@ layout: post
 slug: stop-making-soa-complex
 status: publish
 title: Stop making SOA complex
+comments: true
 wordpress_id: '405'
 categories:
 - architecture

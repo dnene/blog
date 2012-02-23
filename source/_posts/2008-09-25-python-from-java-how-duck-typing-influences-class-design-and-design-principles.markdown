@@ -4,6 +4,7 @@ layout: post
 slug: python-from-java-how-duck-typing-influences-class-design-and-design-principles
 status: publish
 title: Python from a Java perspective - Part 2 - How duck typing influences class
+comments: true
   design and design principles
 wordpress_id: '105'
 categories:

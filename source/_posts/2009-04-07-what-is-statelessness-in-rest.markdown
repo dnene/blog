@@ -4,6 +4,7 @@ layout: post
 slug: what-is-statelessness-in-rest
 status: publish
 title: What is statelessness in REST ?
+comments: true
 wordpress_id: '622'
 categories:
 - architecture

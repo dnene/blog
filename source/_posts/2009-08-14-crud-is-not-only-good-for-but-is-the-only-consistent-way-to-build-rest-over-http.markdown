@@ -4,6 +4,7 @@ layout: post
 slug: crud-is-not-only-good-for-but-is-the-only-consistent-way-to-build-rest-over-http
 status: publish
 title: CRUD is not only good for, but is the only consistent way to build REST over
+comments: true
   HTTP
 wordpress_id: '787'
 categories:

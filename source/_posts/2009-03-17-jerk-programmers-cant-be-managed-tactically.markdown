@@ -4,6 +4,7 @@ layout: post
 slug: jerk-programmers-cant-be-managed-tactically
 status: publish
 title: Jerk programmers can't be managed tactically
+comments: true
 wordpress_id: '551'
 categories:
 - management

@@ -4,6 +4,7 @@ layout: post
 slug: platform-designers-think-reach-cloud-usability-top-10-web-platforms-of-2008
 status: publish
 title: Platform Designers - Think Reach, Cloud, Usability
+comments: true
 wordpress_id: '298'
 categories:
 - architecture

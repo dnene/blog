@@ -4,6 +4,7 @@ layout: post
 slug: how-can-a-isp-not-be-up-to-date-on-security
 status: publish
 title: How can a ISP not be up to date on security ?
+comments: true
 wordpress_id: '138'
 categories:
 - hardware and networking

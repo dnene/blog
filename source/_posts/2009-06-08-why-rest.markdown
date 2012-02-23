@@ -4,6 +4,7 @@ layout: post
 slug: why-rest
 status: publish
 title: Why REST ?
+comments: true
 wordpress_id: '648'
 categories:
 - architecture

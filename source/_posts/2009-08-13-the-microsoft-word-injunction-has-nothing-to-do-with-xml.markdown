@@ -4,6 +4,7 @@ layout: post
 slug: the-microsoft-word-injunction-has-nothing-to-do-with-xml
 status: publish
 title: The Microsoft Word injunction has nothing to do with XML
+comments: true
 wordpress_id: '778'
 categories:
 - software

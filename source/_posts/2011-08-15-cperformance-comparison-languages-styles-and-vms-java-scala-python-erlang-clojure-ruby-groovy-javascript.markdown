@@ -4,6 +4,7 @@ layout: post
 slug: cperformance-comparison-languages-styles-and-vms-java-scala-python-erlang-clojure-ruby-groovy-javascript
 status: publish
 title: 'Contrasting Performance : Languages, styles and VMs - Java, Scala, Python,
+comments: true
   Erlang, Clojure, Ruby, Groovy, Javascript'
 wordpress_id: '1144'
 categories:

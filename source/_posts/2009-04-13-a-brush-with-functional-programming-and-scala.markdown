@@ -4,6 +4,7 @@ layout: post
 slug: a-brush-with-functional-programming-and-scala
 status: publish
 title: A brush with Functional Programming and Scala
+comments: true
 wordpress_id: '631'
 categories:
 - functional programming

@@ -4,6 +4,7 @@ layout: post
 slug: why-should-i-switch-to-scala
 status: publish
 title: Why should I switch to Scala ?
+comments: true
 wordpress_id: '815'
 categories:
 - java

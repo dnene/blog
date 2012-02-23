@@ -4,6 +4,7 @@ layout: post
 slug: most-american-graduates-are-unemployable-because-...
 status: publish
 title: Most american graduates are unemployable because ...
+comments: true
 wordpress_id: '748'
 categories:
 - management

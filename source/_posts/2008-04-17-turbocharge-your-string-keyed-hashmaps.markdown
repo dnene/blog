@@ -4,6 +4,7 @@ layout: post
 slug: turbocharge-your-string-keyed-hashmaps
 status: publish
 title: Turbocharge your string keyed hashmaps
+comments: true
 wordpress_id: '25'
 categories:
 - java

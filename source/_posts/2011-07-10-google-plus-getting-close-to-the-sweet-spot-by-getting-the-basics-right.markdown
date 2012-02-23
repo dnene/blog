@@ -4,6 +4,7 @@ layout: post
 slug: google-plus-getting-close-to-the-sweet-spot-by-getting-the-basics-right
 status: publish
 title: 'Google Plus : Getting close to the sweet spot by getting the basics right'
+comments: true
 wordpress_id: '1110'
 categories:
 - Internet and Social Media

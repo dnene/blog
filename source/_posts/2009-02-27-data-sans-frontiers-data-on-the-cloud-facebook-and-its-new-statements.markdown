@@ -4,6 +4,7 @@ layout: post
 slug: data-sans-frontiers-data-on-the-cloud-facebook-and-its-new-statements
 status: publish
 title: 'Data Sans Frontiers : Data on the cloud : Facebook and its new statements'
+comments: true
 wordpress_id: '528'
 categories:
 - Internet and Social Media

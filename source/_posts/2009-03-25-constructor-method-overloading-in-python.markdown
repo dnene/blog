@@ -4,6 +4,7 @@ layout: post
 slug: constructor-method-overloading-in-python
 status: publish
 title: Constructor / Method overloading in Python using Function Switching
+comments: true
 wordpress_id: '583'
 categories:
 - programming

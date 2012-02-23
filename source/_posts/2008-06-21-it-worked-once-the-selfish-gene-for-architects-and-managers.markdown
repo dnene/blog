@@ -4,6 +4,7 @@ layout: post
 slug: it-worked-once-the-selfish-gene-for-architects-and-managers
 status: publish
 title: '"It worked once"  - The ''selfish gene'' for architects and managers  ?'
+comments: true
 wordpress_id: '35'
 categories:
 - architecture

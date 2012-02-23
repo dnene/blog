@@ -4,6 +4,7 @@ layout: post
 slug: poll-usage-of-web-services-soap-rest-http
 status: publish
 title: 'Poll : Usage of web services (SOAP / REST / HTTP)'
+comments: true
 wordpress_id: '185'
 categories:
 - architecture

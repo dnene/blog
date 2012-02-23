@@ -4,6 +4,7 @@ layout: post
 slug: rest-is-the-dbms-of-the-internet
 status: publish
 title: REST is the DBMS of the Internet
+comments: true
 wordpress_id: '675'
 categories:
 - architecture

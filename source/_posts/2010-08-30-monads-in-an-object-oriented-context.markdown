@@ -4,6 +4,7 @@ layout: post
 slug: monads-in-an-object-oriented-context
 status: publish
 title: Monads in an Object Oriented context
+comments: true
 wordpress_id: '1056'
 categories:
 - functional programming

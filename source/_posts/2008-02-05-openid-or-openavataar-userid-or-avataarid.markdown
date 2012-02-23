@@ -4,6 +4,7 @@ layout: post
 slug: openid-or-openavataar-userid-or-avataarid
 status: publish
 title: OpenID or OpenAvataar ? UserID or AvataarID ?
+comments: true
 wordpress_id: '14'
 categories:
 - java

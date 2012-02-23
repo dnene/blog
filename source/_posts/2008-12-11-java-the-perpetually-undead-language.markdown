@@ -4,6 +4,7 @@ layout: post
 slug: java-the-perpetually-undead-language
 status: publish
 title: 'Java : the perpetually undead language'
+comments: true
 wordpress_id: '274'
 categories:
 - java

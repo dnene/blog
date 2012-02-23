@@ -4,6 +4,7 @@ layout: post
 slug: opera-unite-a-model-for-server-disintermediation-on-the-internet
 status: publish
 title: 'Opera Unite : A model for server disintermediation on the internet'
+comments: true
 wordpress_id: '737'
 categories:
 - architecture

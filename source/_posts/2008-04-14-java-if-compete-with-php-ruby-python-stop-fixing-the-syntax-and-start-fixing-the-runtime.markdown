@@ -4,6 +4,7 @@ layout: post
 slug: java-if-compete-with-php-ruby-python-stop-fixing-the-syntax-and-start-fixing-the-runtime
 status: publish
 title: 'Java : if (compete with PHP / Ruby / Python) { stop fixing the syntax and
+comments: true
   start fixing the runtime }'
 wordpress_id: '24'
 categories:

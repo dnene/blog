@@ -4,6 +4,7 @@ layout: post
 slug: mind-your-language-pragmatic-programmers-should-not-be-re-termed-duct-tape-programmers
 status: publish
 title: 'Mind your language: Pragmatic programmers should not be re-termed duct tape
+comments: true
   programmers'
 wordpress_id: '825'
 categories:

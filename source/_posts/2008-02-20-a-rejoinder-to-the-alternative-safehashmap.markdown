@@ -4,6 +4,7 @@ layout: post
 slug: a-rejoinder-to-the-alternative-safehashmap
 status: publish
 title: A rejoinder to the alternative SafeHashMap
+comments: true
 wordpress_id: '21'
 categories:
 - java

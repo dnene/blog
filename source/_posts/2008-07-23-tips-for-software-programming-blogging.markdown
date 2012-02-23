@@ -4,6 +4,7 @@ layout: post
 slug: tips-for-software-programming-blogging
 status: publish
 title: Tips for Software / Programming blogging
+comments: true
 wordpress_id: '39'
 categories:
 - blogging

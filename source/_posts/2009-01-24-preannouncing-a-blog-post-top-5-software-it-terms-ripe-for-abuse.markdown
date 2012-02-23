@@ -4,6 +4,7 @@ layout: post
 slug: preannouncing-a-blog-post-top-5-software-it-terms-ripe-for-abuse
 status: publish
 title: 'Preannouncing a blog post : Top 5 software / IT terms ripe for abuse'
+comments: true
 wordpress_id: '428'
 categories:
 - software

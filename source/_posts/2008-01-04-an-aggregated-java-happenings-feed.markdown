@@ -4,6 +4,7 @@ layout: post
 slug: an-aggregated-java-happenings-feed
 status: publish
 title: An aggregated java happenings feed
+comments: true
 wordpress_id: '9'
 categories:
 - java

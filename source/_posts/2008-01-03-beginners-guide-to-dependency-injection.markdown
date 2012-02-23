@@ -4,6 +4,7 @@ layout: post
 slug: beginners-guide-to-dependency-injection
 status: publish
 title: Beginners guide to Dependency Injection
+comments: true
 wordpress_id: '6'
 categories:
 - java

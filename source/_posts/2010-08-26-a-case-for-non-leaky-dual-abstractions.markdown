@@ -4,6 +4,7 @@ layout: post
 slug: a-case-for-non-leaky-dual-abstractions.
 status: publish
 title: A case for non leaky dual abstractions.
+comments: true
 wordpress_id: '1042'
 categories:
 - architecture

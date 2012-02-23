@@ -4,6 +4,7 @@ layout: post
 slug: software-engineering-code-of-ethics-and-professional-practice
 status: publish
 title: Software Engineering Code of Ethics and Professional Practice
+comments: true
 wordpress_id: '22'
 categories:
 - software

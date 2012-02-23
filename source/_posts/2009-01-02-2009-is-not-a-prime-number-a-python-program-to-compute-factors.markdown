@@ -4,6 +4,7 @@ layout: post
 slug: 2009-is-not-a-prime-number-a-python-program-to-compute-factors
 status: publish
 title: 2009 is not a prime number. A python program to compute factors.
+comments: true
 wordpress_id: '335'
 categories:
 - programming

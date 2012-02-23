@@ -4,6 +4,7 @@ layout: post
 slug: design-characteristics-of-rest-resource-oriented-server-frameworks-and-clients
 status: publish
 title: Design Characteristics of REST / Resource Oriented Server Frameworks and Clients
+comments: true
 wordpress_id: '690'
 categories:
 - architecture

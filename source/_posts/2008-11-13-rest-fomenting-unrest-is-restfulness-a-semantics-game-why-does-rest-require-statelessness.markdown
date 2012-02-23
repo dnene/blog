@@ -4,6 +4,7 @@ layout: post
 slug: rest-fomenting-unrest-is-restfulness-a-semantics-game-why-does-rest-require-statelessness
 status: publish
 title: 'Fomenting unREST : Is RESTfulness a semantics game ? Why does REST require
+comments: true
   statelessness ?'
 wordpress_id: '154'
 categories:

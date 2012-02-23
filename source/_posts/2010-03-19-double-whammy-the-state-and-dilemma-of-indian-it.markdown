@@ -4,6 +4,7 @@ layout: post
 slug: double-whammy.-the-state-and-dilemma-of-indian-it
 status: publish
 title: Double whammy. The state and dilemma of Indian IT
+comments: true
 wordpress_id: '1005'
 categories:
 - management

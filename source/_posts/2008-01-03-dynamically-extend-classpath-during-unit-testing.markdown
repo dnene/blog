@@ -4,6 +4,7 @@ layout: post
 slug: dynamically-extend-classpath-during-unit-testing
 status: publish
 title: Dynamically Extend Classpath during Unit Testing
+comments: true
 wordpress_id: '8'
 categories:
 - java

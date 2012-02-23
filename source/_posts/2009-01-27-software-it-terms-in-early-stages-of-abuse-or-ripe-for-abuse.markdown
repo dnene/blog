@@ -4,6 +4,7 @@ layout: post
 slug: software-it-terms-in-early-stages-of-abuse-or-ripe-for-abuse
 status: publish
 title: Software / IT Terms in early stages of abuse or ripe for Abuse
+comments: true
 wordpress_id: '432'
 categories:
 - software

@@ -4,6 +4,7 @@ layout: post
 slug: improve-your-web-based-software-development-and-maintenance-roi-with-dynamic-programming-languages
 status: publish
 title: Improve your web based software development and maintenance ROI with dynamic
+comments: true
   programming languages
 wordpress_id: '725'
 categories:

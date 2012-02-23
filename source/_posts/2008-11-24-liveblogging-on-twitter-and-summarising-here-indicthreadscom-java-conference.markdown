@@ -4,6 +4,7 @@ layout: post
 slug: liveblogging-on-twitter-and-summarising-here-indicthreadscom-java-conference
 status: publish
 title: 'IndicThreads.com Java conference : LiveBlogging on Twitter and Summarising
+comments: true
   here'
 wordpress_id: '195'
 categories:

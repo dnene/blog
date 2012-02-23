@@ -4,6 +4,7 @@ layout: post
 slug: implications-of-openid-on-software-design
 status: publish
 title: Implications of OpenID on software design
+comments: true
 wordpress_id: '18'
 categories:
 - software

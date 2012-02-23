@@ -4,6 +4,7 @@ layout: post
 slug: openid-for-intranets-and-extranets
 status: publish
 title: OpenID for Intranets and Extranets
+comments: true
 wordpress_id: '16'
 categories:
 - java

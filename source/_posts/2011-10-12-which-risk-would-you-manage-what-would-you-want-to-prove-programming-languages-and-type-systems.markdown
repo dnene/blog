@@ -4,6 +4,7 @@ layout: post
 slug: which-risk-would-you-manage-what-would-you-want-to-prove-programming-languages-and-type-systems
 status: publish
 title: Which risk would you manage? What would you want to prove? Programming Languages
+comments: true
   and Type Systems
 wordpress_id: '1202'
 categories:

@@ -4,6 +4,7 @@ layout: post
 slug: a-technical-comparison-of-open-social-and-facebook-platforms
 status: publish
 title: A Developer's Comparison of Open Social and Facebook platforms
+comments: true
 wordpress_id: '19'
 categories:
 - software

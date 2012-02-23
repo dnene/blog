@@ -4,6 +4,7 @@ layout: post
 slug: conference-report-hasgeek-jsfoo-pune-2012
 status: publish
 title: Conference Report - Hasgeek jsFoo Pune 2012
+comments: true
 wordpress_id: '1221'
 categories:
 - programming

@@ -4,6 +4,7 @@ layout: post
 slug: some-information-on-linkedin-and-linkedin-apps-inapps
 status: publish
 title: Some information on LinkedIn and LinkedIn Apps (InApps)
+comments: true
 wordpress_id: '219'
 categories:
 - company-profile

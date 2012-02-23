@@ -4,6 +4,7 @@ layout: post
 slug: why-i-deleted-my-facebook-data-commentary-on-internet-data-privacy-rules
 status: publish
 title: Why I deleted my Facebook data. Commentary on Internet data privacy rules.
+comments: true
 wordpress_id: '476'
 categories:
 - programming

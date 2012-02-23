@@ -4,6 +4,7 @@ layout: post
 slug: nice-error-message
 status: publish
 title: Nice error message
+comments: true
 wordpress_id: '3'
 categories:
 - software

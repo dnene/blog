@@ -4,6 +4,7 @@ layout: post
 slug: factors-influencing-cache-design
 status: publish
 title: Factors influencing Cache Design
+comments: true
 wordpress_id: '42'
 categories:
 - architecture

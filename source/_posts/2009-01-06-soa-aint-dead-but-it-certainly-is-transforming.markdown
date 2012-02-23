@@ -4,6 +4,7 @@ layout: post
 slug: soa-aint-dead-but-it-certainly-is-transforming
 status: publish
 title: SOA ain't dead but it certainly is transforming
+comments: true
 wordpress_id: '385'
 categories:
 - architecture

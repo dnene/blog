@@ -4,6 +4,7 @@ layout: post
 slug: i-demand-a-website-security-policy
 status: publish
 title: I demand a website security policy
+comments: true
 wordpress_id: '396'
 categories:
 - architecture

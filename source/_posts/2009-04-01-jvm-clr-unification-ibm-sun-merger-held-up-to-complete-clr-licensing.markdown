@@ -4,6 +4,7 @@ layout: post
 slug: jvm-clr-unification-ibm-sun-merger-held-up-to-complete-clr-licensing
 status: publish
 title: 'JVM CLR unification : IBM Sun merger held up to complete CLR licensing'
+comments: true
 wordpress_id: '602'
 categories:
 - java

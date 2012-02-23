@@ -4,6 +4,7 @@ layout: post
 slug: learnings-from-a-deleted-blog-post
 status: publish
 title: Learnings from a deleted blog post
+comments: true
 wordpress_id: '13'
 categories:
 - blogging

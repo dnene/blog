@@ -4,6 +4,7 @@ layout: post
 slug: my-first-impressions-of-google-knol
 status: publish
 title: My first impressions of Google Knol
+comments: true
 wordpress_id: '40'
 categories:
 - blogging

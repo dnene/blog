@@ -4,6 +4,7 @@ layout: post
 slug: why-you-may-want-to-evaluate-replacing-a-md5-signed-certificate
 status: publish
 title: Why you may want to evaluate replacing a md5 signed certificate
+comments: true
 wordpress_id: '374'
 categories:
 - security

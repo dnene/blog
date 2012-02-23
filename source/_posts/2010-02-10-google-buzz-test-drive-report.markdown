@@ -4,6 +4,7 @@ layout: post
 slug: google-buzz-test-drive-report
 status: publish
 title: Google Buzz Test Drive Report
+comments: true
 wordpress_id: '964'
 categories:
 - Internet and Social Media

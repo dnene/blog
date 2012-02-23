@@ -4,6 +4,7 @@ layout: post
 slug: agile-andor-process-maturity-how-do-i-perceive-these-terms-and-why-these-should-not-be-confused
 status: publish
 title: 'Agility and/or Process Maturity : How do I perceive these terms and why these
+comments: true
   should not be confused'
 wordpress_id: '575'
 categories:

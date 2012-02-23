@@ -4,6 +4,7 @@ layout: post
 slug: five-important-trends-on-the-enterprise-architects-radar
 status: publish
 title: Five important trends on the enterprise architect's radar
+comments: true
 wordpress_id: '912'
 categories:
 - architecture

@@ -4,6 +4,7 @@ layout: post
 slug: rest-soa-woa-or-roa
 status: publish
 title: 'ReST : SOA, WOA or ROA ?'
+comments: true
 wordpress_id: '699'
 categories:
 - architecture

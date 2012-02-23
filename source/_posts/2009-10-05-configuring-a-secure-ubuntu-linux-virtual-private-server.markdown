@@ -4,6 +4,7 @@ layout: post
 slug: configuring-a-secure-ubuntu-linux-virtual-private-server
 status: publish
 title: Configuring a secure Ubuntu Linux Virtual Private Server
+comments: true
 wordpress_id: '852'
 categories:
 - linux

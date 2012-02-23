@@ -4,6 +4,7 @@ layout: post
 slug: functional-programming-with-python-%e2%80%93-part-2-useful-python-constructs
 status: publish
 title: Functional Programming with Python – Part 2 - Useful python constructs
+comments: true
 wordpress_id: '983'
 categories:
 - functional programming

@@ -4,6 +4,7 @@ layout: post
 slug: why-java-folks-should-look-forward-to-scala
 status: publish
 title: Why Java folks should look forward to Scala
+comments: true
 wordpress_id: '1091'
 categories:
 - functional programming

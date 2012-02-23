@@ -4,6 +4,7 @@ layout: post
 slug: post-conference-recap-the-4th-indicthreads.com-conference-on-java-technology
 status: publish
 title: 'Post conference recap : The 4th Indicthreads.com conference on Java Technology'
+comments: true
 wordpress_id: '928'
 categories:
 - java

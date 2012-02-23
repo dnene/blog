@@ -4,6 +4,7 @@ layout: post
 slug: in-defense-of-passionate-programming
 status: publish
 title: In defense of passionate programming
+comments: true
 wordpress_id: '23'
 categories:
 - software

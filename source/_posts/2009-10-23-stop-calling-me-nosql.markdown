@@ -4,6 +4,7 @@ layout: post
 slug: stop-calling-me-nosql
 status: publish
 title: Stop calling me NoSQL
+comments: true
 wordpress_id: '884'
 categories:
 - architecture

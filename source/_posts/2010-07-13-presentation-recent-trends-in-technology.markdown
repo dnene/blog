@@ -4,6 +4,7 @@ layout: post
 slug: presentation-recent-trends-in-technology
 status: publish
 title: 'Presentation : Recent trends in technology'
+comments: true
 wordpress_id: '1012'
 categories:
 - architecture

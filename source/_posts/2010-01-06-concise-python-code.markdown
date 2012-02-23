@@ -4,6 +4,7 @@ layout: post
 slug: concise-python-code
 status: publish
 title: Concise python code
+comments: true
 wordpress_id: '937'
 categories:
 - functional programming

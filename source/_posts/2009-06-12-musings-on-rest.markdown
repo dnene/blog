@@ -4,6 +4,7 @@ layout: post
 slug: musings-on-rest
 status: publish
 title: Musings on REST
+comments: true
 wordpress_id: '710'
 categories:
 - architecture

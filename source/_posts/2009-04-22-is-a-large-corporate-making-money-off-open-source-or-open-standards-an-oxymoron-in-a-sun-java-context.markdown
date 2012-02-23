@@ -4,6 +4,7 @@ layout: post
 slug: is-a-large-corporate-making-money-off-open-source-or-open-standards-an-oxymoron-in-a-sun-java-context
 status: publish
 title: Is a large corporate making money off open source or open standards an oxymoron
+comments: true
   ? In a Sun / Java Context
 wordpress_id: '642'
 categories:

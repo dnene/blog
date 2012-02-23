@@ -4,6 +4,7 @@ layout: post
 slug: why-you-should-register-to-attend-python-conference-pune-sept-2011-right-now
 status: publish
 title: Why you should register to attend Python Conference Pune (Sept 2011) right
+comments: true
   now
 wordpress_id: '1127'
 categories:

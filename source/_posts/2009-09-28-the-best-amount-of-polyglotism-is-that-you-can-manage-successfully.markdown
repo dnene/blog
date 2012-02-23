@@ -4,6 +4,7 @@ layout: post
 slug: the-best-amount-of-polyglotism-is-that-you-can-manage-successfully
 status: publish
 title: The best amount of polyglotism is that you can manage successfully
+comments: true
 wordpress_id: '829'
 categories:
 - management

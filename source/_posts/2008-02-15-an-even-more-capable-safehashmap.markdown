@@ -4,6 +4,7 @@ layout: post
 slug: an-even-more-capable-safehashmap
 status: publish
 title: An even more capable SafeHashMap
+comments: true
 wordpress_id: '20'
 categories:
 - java

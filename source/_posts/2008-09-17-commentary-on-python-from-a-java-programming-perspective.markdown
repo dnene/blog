@@ -4,6 +4,7 @@ layout: post
 slug: commentary-on-python-from-a-java-programming-perspective
 status: publish
 title: Commentary on Python from a Java programming perspective
+comments: true
 wordpress_id: '73'
 categories:
 - java

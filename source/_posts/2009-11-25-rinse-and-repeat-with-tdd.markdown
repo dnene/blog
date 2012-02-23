@@ -4,6 +4,7 @@ layout: post
 slug: rinse-and-repeat-with-tdd
 status: publish
 title: Rinse and Repeat with TDD
+comments: true
 wordpress_id: '921'
 categories:
 - agile
